@@ -72,13 +72,13 @@ export default function PricingPage() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 items-start">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-3 items-start">
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative rounded-xl p-8 transition-colors duration-200 ${
+              className={`relative rounded-xl p-6 sm:p-8 transition-colors duration-200 ${
                 plan.popular
-                  ? "bg-white ring-2 ring-accent scale-105"
+                  ? "bg-white ring-2 ring-accent md:scale-105"
                   : "bg-white border border-border"
               }`}
             >

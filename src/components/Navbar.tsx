@@ -48,7 +48,7 @@ export function Navbar() {
           </div>
 
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-3"
             onClick={() => setOpen(!open)}
             aria-label="Menü"
           >

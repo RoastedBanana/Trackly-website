@@ -85,10 +85,10 @@ export function Showcase() {
 
         {/* Main Card */}
         <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-white mb-12">
-          <div className="p-8 lg:p-10 min-h-[500px] w-full">
-            <div key={step} className="grid lg:grid-cols-2 gap-12 items-center animate-fade-in">
+          <div className="p-4 sm:p-6 lg:p-10 min-h-0 sm:min-h-[400px] lg:min-h-[500px] w-full">
+            <div key={step} className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 items-center animate-fade-in">
               {/* Mock Preview */}
-              <div className="rounded-xl bg-gradient-to-br from-accent/5 to-accent/5 p-8 min-h-[400px] flex flex-col justify-center border border-border">
+              <div className="rounded-xl bg-gradient-to-br from-accent/5 to-accent/5 p-4 sm:p-6 lg:p-8 min-h-[250px] sm:min-h-[350px] lg:min-h-[400px] flex flex-col justify-center border border-border">
                 {active.id === "email" && <EmailMock />}
                 {active.id === "mobile" && <TrackingPageMock />}
                 {active.id === "analytics" && <AnalyticsMock />}

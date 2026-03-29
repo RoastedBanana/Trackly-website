@@ -73,7 +73,7 @@ export function Integrationen() {
     <section id="integrationen" ref={ref} className="py-12 lg:py-16 bg-white">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Integration Orbit Section */}
-        <div className="relative flex flex-col lg:flex-row items-center justify-between gap-12 mb-24 overflow-hidden min-h-[30rem]">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 lg:mb-24 overflow-hidden min-h-0 lg:min-h-[30rem]">
           {/* Left: Text */}
           <div className="w-full lg:w-1/2 z-10">
             <h2 className="text-3xl font-heading font-semibold text-dark sm:text-4xl lg:text-5xl leading-tight">
@@ -95,8 +95,8 @@ export function Integrationen() {
           </div>
 
           {/* Right: Orbit Animation */}
-          <div className="relative w-full lg:w-1/2 h-[28rem] lg:h-full flex items-center justify-center lg:justify-start overflow-hidden">
-            <div className="relative w-[52rem] h-[52rem] lg:translate-x-[45%] flex items-center justify-center">
+          <div className="relative w-full lg:w-1/2 h-[16rem] sm:h-[22rem] lg:h-full flex items-center justify-center lg:justify-start overflow-hidden">
+            <div className="relative w-[28rem] sm:w-[38rem] h-[28rem] sm:h-[38rem] lg:w-[52rem] lg:h-[52rem] lg:translate-x-[45%] flex items-center justify-center">
               {/* Center Icon */}
               <div className="w-20 h-20 rounded-full bg-white border border-border flex items-center justify-center z-10">
                 <Package className="w-9 h-9 text-accent" />
