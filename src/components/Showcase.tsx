@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Monitor, Smartphone, Mail, BarChart3 } from "lucide-react";
 
 const TOTAL_STEPS = 4;
@@ -58,6 +58,7 @@ function IconCheck({ className }: { className?: string }) {
 
 export function Showcase() {
   const [step, setStep] = useState(0);
+  const touchStart = useRef<number | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -65,6 +66,23 @@ export function Showcase() {
     }, 6000);
     return () => clearTimeout(timer);
   }, [step]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart.current === null) return;
+    const diff = touchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        setStep((prev) => (prev + 1) % TOTAL_STEPS);
+      } else {
+        setStep((prev) => (prev - 1 + TOTAL_STEPS) % TOTAL_STEPS);
+      }
+    }
+    touchStart.current = null;
+  };
 
   const active = steps[step];
 
@@ -84,7 +102,11 @@ export function Showcase() {
         </div>
 
         {/* Main Card */}
-        <div className="relative w-full overflow-hidden rounded-2xl border border-border bg-white mb-12">
+        <div
+          className="relative w-full overflow-hidden rounded-2xl border border-border bg-white mb-12 touch-pan-y"
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+        >
           <div className="p-4 sm:p-6 lg:p-10 min-h-0 sm:min-h-[400px] lg:min-h-[500px] w-full">
             <div key={step} className="grid grid-cols-1 gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-12 items-center animate-fade-in">
               {/* Mock Preview */}
