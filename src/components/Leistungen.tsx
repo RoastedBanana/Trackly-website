@@ -170,7 +170,6 @@ export function Leistungen() {
                     {feature.description}
                   </p>
                 </div>
-                <ArrowRight className="h-5 w-5 shrink-0 text-muted-2 mt-1 transition-all group-hover:text-accent group-hover:translate-x-1" />
               </div>
             ))}
           </div>
