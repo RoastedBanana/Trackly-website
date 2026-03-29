@@ -88,7 +88,7 @@ export function Hero() {
           </div>
 
           {/* Right: Image with floating popups */}
-          <div className="relative min-h-[300px] sm:min-h-[400px] lg:h-[620px]">
+          <div className="hidden sm:block relative sm:min-h-[400px] lg:h-[620px]">
             {/* Main image */}
             <div className="relative rounded-xl overflow-hidden lg:absolute lg:inset-0 lg:rounded-none lg:rounded-tl-[3rem]">
               <img
